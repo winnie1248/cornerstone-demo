@@ -23,14 +23,18 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": [
+              "node_modules/cornerstone-core/dist/cornerstone.min.js",
+              "node_modules/cornerstone-math/dist/cornerstoneMath.min.js",
+              "node_modules/cornerstone-tools/dist/cornerstoneTools.min.js",
+              "node_modules/cornerstone-web-image-loader/dist/cornerstoneWebImageLoader.min.js",
+              "node_modules/cornerstone-wado-image-loader/dist/cornerstoneWADOImageLoader.min.js",
+              "node_modules/cornerstone-wado-image-loader/dist/cornerstoneWADOImageLoaderWebWorker.min.js",
+              "node_modules/dicom-parser/dist/dicomParser.min.js",
+              "node_modules/hammerjs/hammer.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,14 +91,18 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": [
+              "node_modules/cornerstone-core/dist/cornerstone.min.js",
+              "node_modules/cornerstone-math/dist/cornerstoneMath.min.js",
+              "node_modules/cornerstone-tools/dist/cornerstoneTools.min.js",
+              "node_modules/cornerstone-web-image-loader/dist/cornerstoneWebImageLoader.min.js",
+              "node_modules/cornerstone-wado-image-loader/dist/cornerstoneWADOImageLoader.min.js",
+              "node_modules/cornerstone-wado-image-loader/dist/cornerstoneWADOImageLoaderWebWorker.min.js",
+              "node_modules/dicom-parser/dist/dicomParser.min.js",
+              "node_modules/hammerjs/hammer.js"
+            ]
           }
         },
         "lint": {
@@ -105,9 +113,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cornerstone-demo"
 }
