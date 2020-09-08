@@ -5,9 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WebImageLoaderComponent } from './web-image-loader/web-image-loader.component';
+import { WadoImageLoaderComponent } from './wado-image-loader/wado-image-loader.component';
 
 @NgModule({
-  declarations: [AppComponent, WebImageLoaderComponent],
+  declarations: [
+    AppComponent,
+    WebImageLoaderComponent,
+    WadoImageLoaderComponent,
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,155 @@
+<h3 class="pb-3">WADO Image Loader</h3>
+<div class="row">
+  <div class="col-6">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">URL</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="imageUrl" />
+      <div class="input-group-append">
+        <button
+          class="btn btn-secondary"
+          type="button"
+          (click)="downloadAndView(imageUrl)"
+        >
+          Download and View
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <input
+      #uploadFile
+      hidden
+      type="file"
+      accept="application/dicom"
+      (change)="uploadImage($event.target.files)"
+    />
+    <button
+      class="btn btn-secondary mr-3"
+      type="button"
+      (click)="uploadFile.click()"
+    >
+      Upload File and View
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-auto">
+    <div class="dicom-image" #dicomImage></div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h4>Patient</h4>
+        <p><strong>Patient ID:</strong> {{ dicomInfo?.patient?.patientId }}</p>
+        <p>
+          <strong>Patient Name:</strong> {{ dicomInfo?.patient?.patientName }}
+        </p>
+        <p>
+          <strong>Patient Birth Date:</strong>
+          {{ dicomInfo?.patient?.patientBirthDate }}
+        </p>
+        <p>
+          <strong>Patient Sex:</strong> {{ dicomInfo?.patient?.patientSex }}
+        </p>
+      </div>
+      <div class="col">
+        <h4>Study</h4>
+        <p><strong>Study ID:</strong> {{ dicomInfo?.study?.studyId }}</p>
+        <p><strong>Study Date:</strong> {{ dicomInfo?.study?.studyDate }}</p>
+        <p><strong>Study Time:</strong> {{ dicomInfo?.study?.studyTime }}</p>
+        <p>
+          <strong>Study Description:</strong>
+          {{ dicomInfo?.study?.studyDescription }}
+        </p>
+        <p>
+          <strong>Protocol Name:</strong> {{ dicomInfo?.study?.protocolName }}
+        </p>
+        <p>
+          <strong>Accession Number:</strong>
+          {{ dicomInfo?.study?.accessionNumber }}
+        </p>
+      </div>
+      <div class="col">
+        <h4>Series</h4>
+        <p>
+          <strong>Series Number:</strong> {{ dicomInfo?.series?.seriesNumber }}
+        </p>
+        <p><strong>Series Date:</strong> {{ dicomInfo?.series?.seriesDate }}</p>
+        <p><strong>Series Time:</strong> {{ dicomInfo?.series?.seriesTime }}</p>
+        <p>
+          <strong>Series Description:</strong>
+          {{ dicomInfo?.series?.seriesDescription }}
+        </p>
+        <p><strong>Modality:</strong> {{ dicomInfo?.series?.modality }}</p>
+        <p>
+          <strong>Body Part Examined:</strong>
+          {{ dicomInfo?.series?.bodyPartExamined }}
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <h4>Instance</h4>
+        <p>
+          <strong>Instance Number:</strong>
+          {{ dicomInfo?.instance?.instanceNumber }}
+        </p>
+        <p>
+          <strong>Acquisition Number:</strong>
+          {{ dicomInfo?.instance?.acquisitionNumber }}
+        </p>
+        <p>
+          <strong>Acquisition Date:</strong>
+          {{ dicomInfo?.instance?.acquisitionDate }}
+        </p>
+        <p>
+          <strong>Acquisition Time:</strong>
+          {{ dicomInfo?.instance?.acquisitionTime }}
+        </p>
+        <p>
+          <strong>Content Date:</strong>
+          {{ dicomInfo?.instance?.contentDate }}
+        </p>
+        <p>
+          <strong>Content Time:</strong>
+          {{ dicomInfo?.instance?.contentTime }}
+        </p>
+      </div>
+      <div class="col">
+        <h4>Equipment</h4>
+        <p>
+          <strong>Manufacturer:</strong>
+          {{ dicomInfo?.equipment?.manufacturer }}
+        </p>
+        <p>
+          <strong>Model Name:</strong>
+          {{ dicomInfo?.equipment?.modelName }}
+        </p>
+        <p>
+          <strong>Station Name:</strong>
+          {{ dicomInfo?.equipment?.stationName }}
+        </p>
+        <p>
+          <strong>Application Entity Title:</strong>
+          {{ dicomInfo?.equipment?.applicationEntityTitle }}
+        </p>
+        <p>
+          <strong>Institution Name:</strong>
+          {{ dicomInfo?.equipment?.institutionName }}
+        </p>
+        <p>
+          <strong>Software Version:</strong>
+          {{ dicomInfo?.equipment?.softwareVersion }}
+        </p>
+        <p>
+          <strong>Implementation Version Name:</strong>
+          {{ dicomInfo?.equipment?.implementationVersionName }}
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
