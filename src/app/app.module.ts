@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WebImageLoaderComponent } from './web-image-loader/web-image-loader.component';
 import { WadoImageLoaderComponent } from './wado-image-loader/wado-image-loader.component';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebImageLoaderComponent,
     WadoImageLoaderComponent,
+    ToolsComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

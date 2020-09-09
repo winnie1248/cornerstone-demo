@@ -1,0 +1,258 @@
+<div class="row mb-3">
+  <div class="col-12">
+    <button
+      type="button"
+      class="btn btn-secondary mr-3"
+      title="Load Images (PNG, JPEG)"
+      (click)="loadImages(imagesUrl)"
+    >
+      <span class="fas fa-images"></span>
+      Load Images (PNG, JPEG)
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      title="Load Images (DICOM)"
+      (click)="loadImages(dicomsUrl)"
+    >
+      <span class="fas fa-x-ray"></span>
+      Load Images (DICOM)
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-auto">
+    <div class="image-loader" #imageLoader></div>
+  </div>
+  <div class="col">
+    <div class="row tools">
+      <!-- Toolbar -->
+      <div class="col-12">
+        <!-- WW/WL -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Windowing"
+          (click)="enableWindowing()"
+        >
+          <span class="fas fa-sun"></span>
+          <br />
+          <small>Windowing</small>
+        </button>
+        <!-- Invert -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Invert"
+          (click)="invertImage()"
+        >
+          <span class="fas fa-adjust"></span>
+          <br />
+          <small>Invert</small>
+        </button>
+        <!-- Stack scroll -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Scroll"
+          (click)="enableScroll()"
+        >
+          <span class="fas fa-bars"></span>
+          <br />
+          <small>Scroll</small>
+        </button>
+        <!-- Zoom -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Zoom"
+          (click)="enableZoom()"
+        >
+          <span class="fas fa-search"></span>
+          <br />
+          <small>Zoom</small>
+        </button>
+        <!-- Pan -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Pan"
+          (click)="enablePan()"
+        >
+          <span class="fas fa-arrows-alt"></span>
+          <br />
+          <small>Pan</small>
+        </button>
+        <!-- Pan -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Save"
+          (click)="saveAs()"
+        >
+          <span class="fas fa-save"></span>
+          <br />
+          <small>Save</small>
+        </button>
+        <!-- Reset Image -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Reset"
+          (click)="resetImage()"
+        >
+          <span class="fas fa-undo"></span>
+          <br />
+          <small>Reset</small>
+        </button>
+      </div>
+      <div class="col-12">
+        <!-- Length measurement -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Length"
+          (click)="enableLength()"
+        >
+          <span class="fas fa-arrows-alt-v"></span>
+          <br />
+          <small>Length</small>
+        </button>
+        <!-- Angle measurement -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Angle"
+          (click)="enableAngle()"
+        >
+          <span class="fas fa-angle-left"></span>
+          <br />
+          <small>Angle</small>
+        </button>
+        <!-- Angle measurement -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Annotate"
+          (click)="enableArrowAnnotate()"
+        >
+          <span class="fas fa-long-arrow-alt-up"></span>
+          <br />
+          <small>Annotate</small>
+        </button>
+        <!-- Pixel probe -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Probe"
+          (click)="enableProbe()"
+        >
+          <span class="far fa-dot-circle"></span>
+          <br />
+          <small>Probe</small>
+        </button>
+        <!-- Elliptical -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Elliptical"
+          (click)="enableElliptical()"
+        >
+          <span class="fas fa-circle"></span>
+          <br />
+          <small>Elliptical</small>
+        </button>
+        <!-- Rectangle -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Rectangle"
+          (click)="enableRectangle()"
+        >
+          <span class="fas fa-square"></span>
+          <br />
+          <small>Rectangle</small>
+        </button>
+        <!-- Clear Annotation -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Clear Annotation"
+          (click)="clearAnnotation()"
+        >
+          <span class="fas fa-trash"></span>
+          <br />
+          <small>Clear</small>
+        </button>
+      </div>
+      <div class="col-12">
+        <!-- Skip To First Image -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Skip To First Image"
+          (click)="skipToFirstImage()"
+        >
+          <span class="fas fa-fast-backward"></span>
+          <br />
+          <small>First</small>
+        </button>
+        <!-- Previous Image -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Previous Image"
+          (click)="previousImage()"
+        >
+          <span class="fas fa-step-backward"></span>
+          <br />
+          <small>Previous</small>
+        </button>
+        <!-- Play clip -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Play Clip"
+          (click)="playClip()"
+        >
+          <span class="fas fa-play"></span>
+          <br />
+          <small>Play</small>
+        </button>
+        <!-- Stop clip -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Stop Clip"
+          (click)="stopClip()"
+        >
+          <span class="fas fa-stop"></span>
+          <br />
+          <small>Stop</small>
+        </button>
+        <!-- Next Image -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Next Image"
+          (click)="nextImage()"
+        >
+          <span class="fas fa-step-forward"></span>
+          <br />
+          <small>Next</small>
+        </button>
+        <!-- Skip To Last Image -->
+        <button
+          type="button"
+          class="btn btn-lg btn-default"
+          title="Skip To Last Image"
+          (click)="skipToLastImage()"
+        >
+          <span class="fas fa-fast-forward"></span>
+          <br />
+          <small>Last</small>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
